@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/characters">
+
+    <fragment
+        android:id="@+id/characters"
+        android:name="com.uguraltintas.rickandmorty.ui.characters.CharactersFragment"
+        android:label="@string/charactersFragmentName" >
+        <action
+            android:id="@+id/action_characters_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/episodeDetailFragment"
+        android:name="com.uguraltintas.rickandmorty.ui.episodes.detail.EpisodeDetailFragment"
+        android:label="{title}" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="Detail"/>
+    </fragment>
+    <fragment
+        android:id="@+id/episodes"
+        android:name="com.uguraltintas.rickandmorty.ui.episodes.EpisodesFragment"
+        android:label="@string/episodesFragmentName" >
+        <action
+            android:id="@+id/action_episodesFragment_to_episodeDetailFragment"
+            app:destination="@id/episodeDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/locations"
+        android:name="com.uguraltintas.rickandmorty.ui.locations.LocationsFragment"
+        android:label="@string/locationsFragmentName" >
+        <action
+            android:id="@+id/action_locations_to_locationDetailFragment"
+            app:destination="@id/locationDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="com.uguraltintas.rickandmorty.ui.characters.detail.CharacterDetailFragment"
+        android:label="{title}">
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="1" />
+
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="Detail"/>
+    </fragment>
+    <fragment
+        android:id="@+id/locationDetailFragment"
+        android:name="com.uguraltintas.rickandmorty.ui.locations.detail.LocationDetailFragment"
+        android:label="{title}">
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="1" />
+
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="Detail"/>
+
+    </fragment>
+</navigation>

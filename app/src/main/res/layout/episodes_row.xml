@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="EpisodeModel"
+            type="com.uguraltintas.rickandmorty.model.episodes.EpisodeModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:id="@+id/cvEpisode"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/pale_gray"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvEpisodeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{EpisodeModel.name}"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    tools:text="Episode Name"
+                    android:padding="16dp"/>
+
+                <TextView
+                    android:id="@+id/tvEpisodeAirDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{EpisodeModel.airDate}"
+                    android:textColor="@color/white"
+                    tools:text="Episode AirDate"
+                    android:padding="16dp"/>
+
+                <TextView
+                    android:id="@+id/tvEpisode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{EpisodeModel.episode}"
+                    android:textColor="@color/white"
+                    tools:text="Episode"
+                    android:padding="16dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+</layout>
